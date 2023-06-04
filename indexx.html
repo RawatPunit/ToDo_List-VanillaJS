@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="index.css">
+    <body>
+        <main>
+            <section class="todoapp">
+                <header class="header">
+                    <input id="new-todo" class="new-todo" autocomplete="off" placeholder="Type your todo list">
+                    <button id="add-todo" class="new-todo-button"></button>
+                </header>
+                <section class="main">
+                    <div class="completed-wrapper">
+                        <input id="toggle-all" class="toggle-all" type="checkbox">
+                        <label for="toggle-all">Complete all tasks</label>
+                        <button id="clear-completed" class="clear-completed">Clear completed</button>
+                    </div>
+                    <ul class="todo-list"></ul>
+                </section>
+                <footer class="footer">
+                    <span class="todo-count">
+                        <strong id="remaining-count"></strong> <span id="remaining-pluralize"></span> left
+                    </span>
+                    <ul class="filters">
+                        <li><a href="#/all" class="selected">All</a></li>
+                        <li><a href="#/active">Uncomplete</a></li>
+                        <li><a href="#/completed">Completed</a></li>
+                    </ul>
+                </footer>
+            </section>
+        </main>
+        <script src="indexx.js"></script>
+    </body>
+</html>
