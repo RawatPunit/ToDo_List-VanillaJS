@@ -1,10 +1,6 @@
 // Preset todo list values
 const presetValues = [
     {
-        title: "Make a ToDo Using Vanilla.js",
-        completed: true
-    },
-    {
         title: "Complete the modules",
         completed: false
     },
