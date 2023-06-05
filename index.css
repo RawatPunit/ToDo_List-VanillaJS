@@ -45,10 +45,12 @@ body {
   height: 70vh;
   width: 100%;
  
-  background: linear-gradient(45deg,#d2001a,#7462ff,#f48e21,#23d5ab);
+  /* background: linear-gradient(45deg,#d2001a,#7462ff,#f48e21,#23d5ab);
   animation : colors 12s ease-in-out infinite;
-  background-size: 300% 300%;
- 
+  background-size: 300% 300%; */
+ background-image: url(stacked-steps-haikei.png);
+ background-repeat: no-repeat;
+ background-size: cover;
 }
 @keyframes colors{
   0%{
@@ -83,7 +85,7 @@ body {
 }
 
 .todoapp {
-  background: rgb(83, 178, 233);
+  background: rgb(236, 104, 104);
   padding: 13px;
   margin: 130px 0 40px 0;
   position: relative;
