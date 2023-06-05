@@ -29,20 +29,38 @@ button {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+body { 
   font-family: "Noto Sans HK", sans-serif;
   font-size: 12px;
-  line-height: 1.4em;
-  background: #d5d7de;
-  color: #000;
+  /* line-height: 1.4em; */
+  /* background: #300000; */
+  /* color: #000; */
   min-width: 230px;
   max-width: 550px;
   margin: 0 auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 300;
+ 
+  height: 70vh;
+  width: 100%;
+ 
+  background: linear-gradient(45deg,#d2001a,#7462ff,#f48e21,#23d5ab);
+  animation : colors 12s ease-in-out infinite;
+  background-size: 300% 300%;
+ 
 }
-
+@keyframes colors{
+  0%{
+    transform: 0 50%;
+  }
+  50%{
+    transform: 100 50%;
+  }
+  100%{
+    transform: 0 50%;
+  }
+}
 :focus {
   outline: 0;
 }
@@ -61,13 +79,11 @@ body {
   height: 65px;
   z-index: 1;
   opacity: 1;
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNiAxMmgxMHYxaC0xMHYtMXptNy44MTYtM2gtNy44MTZ2MWg5LjA0N2MtLjQ1LS4yODMtLjg2My0uNjE4LTEuMjMxLTF6bS03LjgxNi0yaDYuNWMtLjEzNC0uMzItLjIzNy0uNjU2LS4zMTktMWgtNi4xODF2MXptMTMgMy45NzV2Mi41NjhjMCA0LjEwNy02IDIuNDU3LTYgMi40NTdzMS41MTggNi0yLjYzOCA2aC03LjM2MnYtMjBoOS41Yy4zMTItLjc0OS43NjMtMS40MjQgMS4zMTYtMmgtMTIuODE2djI0aDEwLjE4OWMzLjE2MyAwIDkuODExLTcuMjIzIDkuODExLTkuNjE0di0zLjg4NmMtLjYyMy4yNi0xLjI5Ny40MjEtMiAuNDc1em00LTYuNDc1YzAgMi40ODUtMi4wMTUgNC41LTQuNSA0LjVzLTQuNS0yLjAxNS00LjUtNC41IDIuMDE1LTQuNSA0LjUtNC41IDQuNSAyLjAxNSA0LjUgNC41em0tMi4xNTYtLjg4MmwtLjY5Ni0uNjk2LTIuMTE2IDIuMTY5LS45OTItLjk0MS0uNjk2LjY5NyAxLjY4OCAxLjYzNyAyLjgxMi0yLjg2NnoiLz48L3N2Zz4=");
-  background-repeat: no-repeat;
   background-position: center;
 }
 
 .todoapp {
-  background: #fff;
+  background: rgb(83, 178, 233);
   padding: 13px;
   margin: 130px 0 40px 0;
   position: relative;
@@ -109,7 +125,7 @@ body {
   padding: 16px 60px 16px 60px;
   border-radius: 10px;
   border: none;
-  background: #efefef;
+  background: #af3e3e66;
   transition: background 0.3s ease;
 }
 .new-todo:focus {
@@ -153,12 +169,12 @@ body {
 }
 
 .toggle-all + label {
-  font-size: 12px;
+  font-size: 18px;
   top: 13px;
   left: 13px;
   z-index: 99;
   cursor: pointer;
-  color: #999;
+  color: #771919;
   transition: color 0.3s ease;
 }
 .toggle-all + label:hover {
@@ -299,6 +315,7 @@ body {
 }
 
 .footer {
+  font-size: large;
   color: #999;
   padding: 10px 0 0 17px;
   border-top: 1px solid #e6e6e6;
@@ -311,8 +328,9 @@ body {
 }
 
 .todo-count strong {
+  font-size: large;
   font-weight: bold;
-  color: #555;
+  color: black;
 }
 
 .filters {
@@ -336,8 +354,9 @@ body {
 
 .clear-completed {
   display: inline-block;
+  font-size: 18px;
   line-height: 40px;
-  color: #999;
+  color: #771919;
 }
 
 .clear-completed,

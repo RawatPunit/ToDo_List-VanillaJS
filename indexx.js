@@ -1,20 +1,24 @@
 // Preset todo list values
 const presetValues = [
     {
-        title: "Wake up at 5am",
+        title: "Make a ToDo Using Vanilla.js",
         completed: true
     },
     {
-        title: "Learn how to use Vue.js",
+        title: "Complete the modules",
         completed: false
     },
     {
-        title: "Drink coffee",
+        title: "Test 1",
         completed: false
     }
 ];
 
+
+//local Storage
 const STORAGE_KEY = "todo-app";
+
+//handle localStorage ops
 const todoStorage = {
     fetch: function() {
         var todos = JSON.parse(localStorage.getItem(STORAGE_KEY)) || presetValues;
@@ -29,7 +33,9 @@ const todoStorage = {
     }
 };
 
+//fetch Todo
 var todos = todoStorage.fetch();
+
 var newTodoInput = document.getElementById("new-todo");
 var addTodoButton = document.getElementById("add-todo");
 var todoList = document.querySelector(".todo-list");
@@ -41,6 +47,7 @@ var allFilterLink = document.querySelector('.filters li:first-child a');
 var activeFilterLink = document.querySelector('.filters li:nth-child(2) a');
 var completedFilterLink = document.querySelector('.filters li:nth-child(3) a');
 
+//func to Add a ToDo
 function addTodo() {
     var value = newTodoInput.value.trim();
     if (value !== "") {
@@ -54,17 +61,20 @@ function addTodo() {
     }
 }
 
+// func to remove a todo
 function removeTodo(todo) {
     todos.splice(todos.indexOf(todo), 1);
     renderTodos();
 }
 
+//completion of a todo
 function toggleTodoComplete(event) {
     var todoItem = event.target.closest("li");
     todoItem.classList.toggle("completed");
     updateRemainingCount();
 }
 
+//update the count 
 function updateRemainingCount() {
     var incompleteTodos = todos.filter(function(todo) {
         return !todo.completed;
@@ -73,6 +83,7 @@ function updateRemainingCount() {
     remainingPluralize.textContent = incompleteTodos.length === 1 ? "task" : "tasks";
 }
 
+//clear Todos
 function clearCompletedTodos() {
     todos = todos.filter(function(todo) {
         return !todo.completed;
@@ -118,6 +129,7 @@ function renderTodos() {
     updateRemainingCount();
 }
 
+//Click Events
 function handleFilterClick(event) {
     event.preventDefault();
     var filterLinks = document.querySelectorAll(".filters a");
@@ -127,6 +139,7 @@ function handleFilterClick(event) {
     renderTodos();
 }
 
+//handle toggling of checkbox
 function handleToggleAllChange(event) {
     var isChecked = event.target.checked;
     todos.forEach(function(todo) {
@@ -135,6 +148,8 @@ function handleToggleAllChange(event) {
     renderTodos();
 }
 
+
+//event Listener
 addTodoButton.addEventListener("click", addTodo);
 newTodoInput.addEventListener("keyup", function(event) {
     if (event.key === "Enter") {
@@ -147,4 +162,5 @@ activeFilterLink.addEventListener("click", handleFilterClick);
 completedFilterLink.addEventListener("click", handleFilterClick);
 toggleAllCheckbox.addEventListener("change", handleToggleAllChange);
 
+//function call
 renderTodos();
